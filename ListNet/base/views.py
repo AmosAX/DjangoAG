@@ -16,7 +16,11 @@ lists = [
 
 # Create your views here.
 def home(request):
-    return render(request, 'base/home.html')
+    context = {
+        'posts': lists
+    }
+    return render(request, 'base/home.html', context)
+
 
 def about(request):
     return HttpResponse('This is the about page')
