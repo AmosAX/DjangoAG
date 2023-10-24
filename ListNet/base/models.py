@@ -12,3 +12,7 @@ class List(models.Model):
     ##Obs att timezone kan defineras på olika sätt 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     #on_delete, ifall våran användare bllir raderade tar vi bort alla deras listor
+
+    ##magic method som 
+    def __str__(self):
+        return self.listname
