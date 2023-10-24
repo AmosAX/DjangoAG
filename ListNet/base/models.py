@@ -14,5 +14,3 @@ class List(models.Model):
     #on_delete, ifall våran användare bllir raderade tar vi bort alla deras listor
 
     ##magic method som 
-    def __str__(self):
-        return self.listname
