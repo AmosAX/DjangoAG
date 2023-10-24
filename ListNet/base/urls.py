@@ -6,4 +6,5 @@ from . import views
 #list-home. user-home etc
 urlpatterns = [
     path('', views.home, name='list-home'),
+    path("about", views.about, name = 'list-about')
 ]

@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+
+#Vi importerar in från Models List klassen
+from .models import List
+
 lists = [
     {
         'author': 'Amos',
@@ -17,10 +21,10 @@ lists = [
 # Create your views here.
 def home(request):
     context = {
-        'posts': lists
+        'posts': List.objects.all()
     }
     return render(request, 'base/home.html', context)
 
 
 def about(request):
-    return HttpResponse('This is the about page')
+    return render(request, 'base/about.html')
