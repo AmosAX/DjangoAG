@@ -1,8 +1,8 @@
 {% load static %}
+<!--Behöver ladda in våra static files, I detta fall CSS-->
 <!DOCTYPE html>
 <html>
 <head>
-
     <link rel="stylesheet" type="text/css" href="{% static 'base/main.css' %}">
     <title>ListNET</title>
     <meta charset="utf-8">
@@ -15,8 +15,8 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="#">Login</a></li>
                 <li><a href="#">Register</a></li>
+                <!-- för att undvika behöva skriva om kan man använda URL tags -->
                 <li><a href="{% url 'list-about' %}">About</a></li>
-                
             </ul>
         </nav>
     </header>
