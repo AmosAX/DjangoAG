@@ -118,6 +118,19 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+# Om det envisas testa
+BASE_DIR.joinpath('media')
+#eller att importera OS 
+
+#BASE_DIR vårt projekts base directory där settings är, 
+#Andra variablen säger sedan på den platsen att vi ska ha det i en directory som heter media  
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#Media_URL är det som vi sen faktiskt kommer använda oss av för att komma åt våran media
+#I detta exempel våra profilbilder
+MEDIA_URL = '/media'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
