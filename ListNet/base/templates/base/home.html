@@ -5,7 +5,8 @@
 {% if lists %}
         {% for list in lists %}
             <article class="post">
-                <h2 class="post-title"><a class="article-title" href="#">{{ list.title }}</a></h2>
+                ##Justera denna rad
+                <h2 class="post-title"><a class="article-title" href="{% url 'list-detail' list.id %}">{{ list.title }}</a></h2>
                 <p class= "post-content">{{ list.author}} </p>
                 <p class= "post-content">{{ list.date_posted | date:"d,m,Y" }} </p>
                 <p class="post-content">{{ list.content }}</p>
