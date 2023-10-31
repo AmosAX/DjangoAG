@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)wxl@c_!e&j3s&x#s3u9p!myf6a9jp-i-zmwao=vi=&bg)ccgn'
+SECRET_KEY = 'django-insecure-wavby_yig)r$0rzh0-o_g^5*xa6=r%2rbw9$i7_40r3gx7-qsg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'base.apps.BaseConfig',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -109,7 +111,6 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
 USE_TZ = True
 
 
@@ -119,16 +120,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-# Om det envisas testa
-BASE_DIR.joinpath('media')
-#eller att importera OS 
 
-#BASE_DIR vårt projekts base directory där settings är, 
-#Andra variablen säger sedan på den platsen att vi ska ha det i en directory som heter media  
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#Media_URL är det som vi sen faktiskt kommer använda oss av för att komma åt våran media
-#I detta exempel våra profilbilder
-MEDIA_URL = '/media'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type
@@ -136,6 +130,4 @@ MEDIA_URL = '/media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-LOGIN_REDIRECT_URL = 'base-home'
-LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'list-home'

@@ -1,31 +1,30 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from . models import List
 
-#Vi importerar in från Models List klassen
-from .models import List
 
-"""
+'''
 lists = [
-    {
-        'author': 'Amos',
-        'title': 'Lista 1',
-        'content': 'Java',
+        {
+        'title': 'List1',
+        'content' : 'Java'
     },
-    {
-        'author': 'Amos',
-        'title': 'Lista 2',
-        'content': 'Python',
+        {
+        'title': 'List2',
+        'content':'Python'
     }
 ]
-Vi kommenterar bort våran exempel data 
-"""
+'''
+
 # Create your views here.
 def home(request):
+
     context = {
-        'posts': List.objects.all()
+        'lists' : List.objects.all()
     }
-    return render(request, 'base/home.html', context)
+    return render(request,"base/home.html",context)
+
 
 def about(request):
-    return render(request, 'base/about.html')
+    return render(request,"base/about.html")

@@ -14,10 +14,11 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Logout</a></li>   
+                <h1>{{user.username}}</h1>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
-                {% endif %}
+                <li><a href="{% url 'login' %}">login</a></li>
+                {% endif%}
                 
                 <li><a href="#">Register</a></li>
                 <!-- för att undvika behöva skriva om kan man använda URL tags -->
@@ -33,3 +34,4 @@
     <!-- Include any JavaScript or scripts you need -->
 </body>
 </html>
+
