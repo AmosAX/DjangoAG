@@ -1,0 +1,8 @@
+{% extends "base/mall.html" %}
+{% block content %}
+    <h1>YOU WANNA DELETE IT</h1>
+    <form method="POST">
+    {% csrf_token %}
+    <button type="submit">YES I AM SURE</button>
+    </form>
+{%endblock content %}

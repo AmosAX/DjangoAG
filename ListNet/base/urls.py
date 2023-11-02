@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 ##Det vi importerar in för class based views från våra views
-from .views import PostListView,PostDetailView,PostCreatView
+from .views import PostListView,PostDetailView,PostCreatView,PostUpdateView,PostDeleteView
 
 
 
@@ -19,9 +19,13 @@ urlpatterns = [
 
     #Vi skapar en URL pattern för speficik post som tar in en variabel!! observera namnet
     path('list/<int:pk>/', PostDetailView.as_view(), name='list-detail'),
-
     #
     path('list/new/', PostCreatView.as_view(), name='list-create'),
+
+    path('list/<int:pk>/update', PostUpdateView.as_view(), name='list-update'),
+
+    #förväntar sig en template om vi är säkra på att vi ska deletea
+    path('list/<int:pk>/delete', PostDeleteView.as_view(), name='list-delete'),
 
 
     path("about",views.about, name = "list-about"),

@@ -119,6 +119,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+## DESSA SETTINGS FÖR MIXIN
+LOGIN_REDIRECT_URL = '/login/'
+LOGIN_URL = '/login/'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
